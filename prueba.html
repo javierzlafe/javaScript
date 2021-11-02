@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombre = prompt("Hola! ingresa tu nombre");
+        let fecha = prompt("Hola " + nombre + "! ingresa tu fecha de nacimiento");
+        let fechaIngresada = prompt("Dime un año y te diré cuantos años tendrás en ese año");
+        
+        let edad = parseFloat(fechaIngresada) - parseFloat(fecha)
+        alert(nombre + " en el año " + fechaIngresada + " tu edad será de " + edad + " años");
+    </script>
+</body>
+</html>
