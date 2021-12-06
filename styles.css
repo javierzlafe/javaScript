@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.logo{
+    width: 199px;
+    height: 35.5px;
+}
+
+.imgCarrito{
+    height: 34.5px;
+    width: 32px;
+}
+
+.header{
+    border-bottom: 2px #513946 solid;
+}
+
+.botonOrdenar{
+    background-color: #513946!important;
+}
+
+.menuOrdenar{
+    color: #513946 !important;
+}
+
+.precio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.botonAgregarCarrito{
+    background-color: #513946!important;
+    color: white!important;
+}

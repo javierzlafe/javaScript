@@ -1,19 +1,412 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edad JS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>LordWatch - Relojería</title>
 </head>
+
 <body>
-    <script>
-        let nombre = prompt("Hola! ingresa tu nombre");
-        let fecha = prompt("Hola " + nombre + "! ingresa tu fecha de nacimiento");
-        let fechaIngresada = prompt("Dime un año y te diré cuantos años tendrás en ese año");
-        
-        let edad = parseFloat(fechaIngresada) - parseFloat(fecha)
-        alert(nombre + " en el año " + fechaIngresada + " tu edad será de " + edad + " años");
-    </script>
+    <div class="container-fluid">
+        <header class="header container-fluid pb-3">
+            <div class="row ">
+                <div class="col">
+                </div>
+
+                <div class="col text-center">
+                    <img class="logo " src="./img/logo.png" alt="logo Relojeria">
+                </div>
+
+                <div class="col align-self-center pe-5">
+                    <img class="imgCarrito float-end" src="./img/bolsaDeCompra.png" alt="Bolsa de compras">
+                </div>
+
+            </div>
+        </header>
+
+        <main class="container-fluid mb-3 ">
+            <div class="row ">
+
+
+                <div class="col-12 text-center">
+                    <h1>Nuestros Relojes</h1>
+                </div>
+
+                <div class="col-12 d-flex justify-content-end">
+                    <div class="dropdown ">
+                        <button class="botonOrdenar btn btn-secondary dropdown-toggle" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ordenar
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="menuOrdenar dropdown-item" href="#">Menor precio</a></li>
+                            <li><a class="menuOrdenar dropdown-item" href="#">Mayor precio</a></li>
+                            <li><a class="menuOrdenar dropdown-item" href="#">Más relevante</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="col-2 text-center">
+                    <h3>seleccion</h3>
+                    <p id="productosSeleccionados"></p>
+                    <br><br><br><br><br>
+                    <p id="total"></p>
+                </aside>
+
+
+                <section class="row col-10 mt-3 g-4">
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/bulovaClassic.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Bulova Classic'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/bulovaCrono.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Bulova Cronograph'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/bulovaMother.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Bulova Mother'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/bulovaRubaiyat.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Bulova Rubaiyat'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/bulovaSutton.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Bulova Sutton'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/rolexBlue.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Rolex Blue'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/rolexAir-king.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Rolex Air-King'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/rolexDatejust.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Rolex Date Just'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/rolexLady.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Rolex Lady'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/rolexLady2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Rolex Lady'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/seikoClassic.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Seiko Classic'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/seikoCrono.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Seiko Cronograph'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/seikoGold.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'seiko Gold'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/seikoGrey.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Seiko Grey'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/seikoNeo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Seiko Neo'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/citizenAxiom.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Citizen Axiom'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/citizenChandler.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Citizen Chandler'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/citizenCorso.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'citizen Corso'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/citizenEco.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Citizen Eco Drive'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 15rem;">
+                            <img src="./img/citizenLeather.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <div class="precio">
+                                    <a href="#" class="botonAgregarCarrito btn" onclick="agregarCarrito({precio:1000, id:0, name:'Citizen Leather'});">Agregar</a>
+                                    <p>$1.000,00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+
+        <footer>
+
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="./index.js"></script>
 </body>
+
 </html>
